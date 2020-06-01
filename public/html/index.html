@@ -6,16 +6,24 @@
 </head>
 
 <body>
+    <div>
+        <h2>ReCaptcha V3 Example </h2>
+        <p> This example will demonstrate the use of ReCaptcha </p>
+    </div>
+    <button id="myBtn">click here</button> to simulate the ReCaptcha.
 
-    <button id="myBtn">Try it</button>
-
+    <div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
     <div id='logs'>
         <H3>Log</H3>
         <div id='log'></div>
     </div>
 
     <script src="https://www.google.com/recaptcha/api.js?render=6Le89_wUAAAAAK8XR5n3UJgtxIGUjH1gaqHQAqKw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/chart.js"></script>
 
     <script>
         document.getElementById("myBtn").addEventListener("click", onClick);

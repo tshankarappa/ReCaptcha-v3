@@ -1,5 +1,5 @@
 var siteKey = '6Le89_wUAAAAAK8XR5n3UJgtxIGUjH1gaqHQAqKw';
-
+var call = 1;
 function onClick(e) {
     e.preventDefault();
     grecaptcha.ready(function () {
@@ -10,6 +10,8 @@ function onClick(e) {
             
             // Add your logic to submit to your backend server here.
             log(start_time, `Token Received <pre>${token}</pre>`);
+            xData.push(call++);
+            getToken.push((Date.now()-start_time));
             log(start_time, 'verifying token') 
            
             var data = `response=${token}`;
@@ -19,6 +21,8 @@ function onClick(e) {
                 if (this.readyState === 4) {
                     console.log(this.responseText);
                     log(start_time, `verified token <pre>${this.responseText}</pre><br><hr>`) 
+                    getScore.push((Date.now()-start_time));
+                    myChart.update();
                 }
             });
         
